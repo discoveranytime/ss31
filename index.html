@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SS-31 (Elamipretide) — The Mitochondrial Mechanic | What Trials Show</title>
+<meta name="description" content="An interactive educational deep-dive into SS-31 (elamipretide): the mitochondria-targeted tetrapeptide, its 2025 Barth syndrome approval, and its string of failed trials. Not medical advice.">
+<script>
+try{var _t=localStorage.getItem("ss31-theme");if(_t==="light"||_t==="dark")document.documentElement.setAttribute("data-theme",_t);}catch(e){}
+</script>
+<style>
+:root{
+  --bg0:#06070d; --bg1:#000000;
+  --ink:#edf0f9; --muted:#a9b1c9; --faint:#7f88a5;
+  --sky:#d946ef; --sky-deep:#86198f;
+  --teal:#86198f; --teal-deep:#3b0764;
+  --org:#86198f; --org-deep:#3b0764;
+  --amber:#fbbf24; --rose:#fb7185; --cyan:#d946ef;
+  --card:#000000; --card2:#000000;
+  --line:rgba(255,255,255,.09);
+  --grad:linear-gradient(100deg,#d946ef 5%,#86198f 50%,#3b0764 95%);
+  --ongrad:#000000;
+  --radius:18px;
+  --acc1:#d946ef;--acc2:#86198f;--acc3:#3b0764;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,"Helvetica Neue",Arial,sans-serif;
+  --disp:"Avenir Next","Segoe UI",-apple-system,BlinkMacSystemFont,Inter,Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--bg0);color:var(--ink);
+  font-size:1.06rem;line-height:1.75;overflow-x:clip;-webkit-font-smoothing:antialiased}
+.bg-grad{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(900px 620px at 12% -6%, rgba(134, 25, 143,0.288), transparent 60%),
+    radial-gradient(820px 600px at 88% 22%, rgba(59, 7, 100,0.192), transparent 60%),
+    radial-gradient(1000px 800px at 50% 110%, rgba(74, 13, 79,0.192), transparent 62%),
+    radial-gradient(700px 500px at 78% 78%, rgba(251,113,133,0.096), transparent 60%)}
+#dots{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.85}
+.orb{position:fixed;z-index:0;pointer-events:none;border-radius:50%;filter:blur(90px)}
+.o1{width:520px;height:520px;left:-140px;top:6%;background:radial-gradient(circle,rgba(134, 25, 143,0.24),transparent 70%);animation:drift1 38s ease-in-out infinite alternate}
+.o2{width:460px;height:460px;right:-120px;top:38%;background:radial-gradient(circle,rgba(59, 7, 100,0.192),transparent 70%);animation:drift2 46s ease-in-out infinite alternate}
+.o3{width:430px;height:430px;left:24%;bottom:-160px;background:radial-gradient(circle,rgba(74, 13, 79,0.192),transparent 70%);animation:drift3 54s ease-in-out infinite alternate}
+@keyframes drift1{from{transform:translate(0,0)}to{transform:translate(120px,80px)}}
+@keyframes drift2{from{transform:translate(0,0)}to{transform:translate(-100px,-70px)}}
+@keyframes drift3{from{transform:translate(0,0)}to{transform:translate(90px,-80px)}}
+#confetti{position:fixed;inset:0;z-index:65;pointer-events:none;opacity:0;transition:opacity .6s ease}
+#confetti.show{opacity:1}
+#doneToast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);z-index:66;
+  background:var(--card);border:1px solid var(--line);color:var(--ink);
+  padding:.7rem 1.25rem;border-radius:999px;font-size:.9rem;font-weight:600;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity .5s ease,transform .5s ease;
+  box-shadow:0 8px 30px rgba(0,0,0,.28)}
+#doneToast.show{opacity:1;transform:translate(-50%,0)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0%;z-index:60;background:var(--grad);border-radius:0 3px 3px 0}
+#themeToggle{position:fixed;top:12px;right:14px;z-index:70;display:flex;align-items:center;gap:2px;
+  border:1px solid var(--line);background:var(--card);border-radius:999px;padding:3px;
+  box-shadow:0 4px 18px rgba(0,0,0,.25)}
+#themeToggle .tt-opt{display:flex;align-items:center;gap:.35rem;border:0;cursor:pointer;
+  padding:.42rem .7rem;border-radius:999px;background:transparent;color:var(--muted);
+  font:700 .74rem var(--font);letter-spacing:.02em;transition:background .25s ease,color .25s ease}
+#themeToggle .tt-opt svg{width:15px;height:15px}
+#themeToggle .tt-opt:hover{color:var(--ink)}
+#themeToggle .tt-opt:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+#themeToggle .tt-opt.active{background:var(--grad);color:#000000}
+@media(max-width:720px){#themeToggle{top:66px}}
+[data-theme="dark"]{color-scheme:dark}
+/* soft neutral gray light theme — never stark white */
+[data-theme="light"]{
+  --bg0:#e8ebf0; --bg1:#eef1f6;
+  --ink:#1b2436; --muted:#4d5871; --faint:#707a93;
+  --sky:#86198f; --sky-deep:#3b0764;
+  --teal:#4e0e53; --teal-deep:#320936;
+  --org:#86198f; --org-deep:#3b0764;
+  --amber:#b45309; --rose:#e11d48; --cyan:#320936;
+  --card:#f8fafc; --card2:#e9edf3;
+  --line:rgba(15,23,42,.14);
+  --grad:linear-gradient(100deg,#86198f,#3b0764,#86198f);
+  --ongrad:#ffffff;
+  color-scheme:light;
+}
+[data-theme="light"] nav.chapters{background:rgba(232,235,240,.88)}
+[data-theme="light"] .toc{background:rgba(232,235,240,.85)}
+[data-theme="light"] .toc a:hover{background:rgba(15,23,42,.06)}
+[data-theme="light"] .orb{opacity:.5}
+[data-theme="light"] #dots{opacity:.55}
+[data-theme="light"] .bg-grad{opacity:.55}
+nav.chapters{position:sticky;top:0;z-index:50;background:rgba(6,7,13,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav.chapters .rail{max-width:1080px;margin:0 auto;padding:.65rem 1rem;display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;padding-right:3.8rem}
+nav.chapters .rail::-webkit-scrollbar{display:none}
+nav.chapters a{flex:0 0 auto;text-decoration:none;color:var(--muted);font-size:.82rem;font-weight:600;
+  letter-spacing:.04em;padding:.42rem .8rem;border:1px solid var(--line);border-radius:999px;white-space:nowrap;transition:all .25s ease}
+nav.chapters a:hover{color:var(--ink);border-color:rgba(255,255,255,.25)}
+nav.chapters a.active{color:#000000;background:var(--grad);border-color:transparent}
+.toc{display:none}
+@media(min-width:1200px){
+  nav.chapters{display:none}
+  body{padding-left:248px}
+  .toc{display:flex;position:fixed;left:0;top:0;bottom:0;width:248px;z-index:45;
+    flex-direction:column;justify-content:center;gap:.2rem;
+    padding:2rem 1.1rem 2rem 1.4rem;
+    background:rgba(6,7,13,.72);backdrop-filter:blur(14px);border-right:1px solid var(--line)}
+  .toc .brand{font-family:var(--disp);font-weight:800;font-size:.98rem;letter-spacing:-.01em;
+    margin-bottom:1.2rem;line-height:1.35;color:var(--ink);
+    text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px}
+  .toc .brand .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .toc a{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--muted);
+    font-size:.86rem;font-weight:600;padding:.55rem .7rem;border-radius:10px;
+    border:1px solid transparent;transition:all .22s ease;position:relative;z-index:1}
+  .toc a .n{font-size:.72rem;font-weight:800;color:var(--faint);width:1.7rem;flex:0 0 auto;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+  .toc a:hover{color:var(--ink);background:rgba(255,255,255,.045)}
+  .toc a.active{color:var(--ongrad);font-weight:700}
+  .toc a.active .n{color:var(--ongrad)}
+  .toc-pill{position:absolute;left:1.4rem;top:0;width:calc(100% - 2.5rem);height:40px;border-radius:10px;
+    background:var(--grad);z-index:0;opacity:0;pointer-events:none;
+    transition:transform .5s cubic-bezier(.25,.8,.25,1),opacity .35s ease,height .3s ease}
+  .toc .mini{margin-top:1.5rem;font-size:.7rem;color:var(--faint);letter-spacing:.14em;
+    text-transform:uppercase;font-weight:700;display:flex;justify-content:space-between;align-items:baseline}
+  .toc .mini #tocPct{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+    font-size:.85rem;font-weight:800;letter-spacing:0;font-variant-numeric:tabular-nums}
+  .toc .mini-bar{height:3px;background:rgba(255,255,255,.08);border-radius:99px;margin-top:.55rem;overflow:hidden}
+  .toc .mini-bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:99px}
+}
+.wrap{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:0 1.25rem}
+section.chapter{padding:4.2rem 0 1rem;scroll-margin-top:84px}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.78rem;font-weight:700;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
+.eyebrow .n{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;border-radius:10px;
+  background:var(--grad);color:#000000;font-size:.85rem;letter-spacing:0}
+h2{font-family:var(--disp);font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:1rem}
+h2 .hl{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{color:var(--muted);font-size:1.12rem;max-width:44rem;margin-bottom:2rem}
+.lede strong{color:var(--ink)}
+.hero{position:relative;z-index:1;text-align:center;padding:5.5rem 1.25rem 3.5rem;max-width:960px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink);border:1px solid var(--line);background:rgba(255,255,255,.04);
+  padding:.55rem 1.1rem;border-radius:999px;margin-bottom:1.6rem}
+.badge .dot{width:.6rem;height:.6rem;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(251,191,36,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(251,191,36,.55)}70%{box-shadow:0 0 0 12px rgba(251,191,36,0)}100%{box-shadow:0 0 0 0 rgba(251,191,36,0)}}
+.hero h1{font-family:var(--disp);font-weight:900;letter-spacing:-.03em;line-height:1.02;font-size:clamp(2.4rem,7.5vw,4.8rem);margin-bottom:1.1rem}
+.hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
+  background-size:200% auto;animation:sheen 9s ease-in-out infinite}
+@keyframes sheen{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero .sub{color:var(--muted);font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:42rem;margin:0 auto 2.2rem}
+.hero .sub strong{color:var(--ink)}
+.quickread{max-width:46rem;margin:0 auto;text-align:left;background:rgba(255,255,255,.035);
+  border:1px solid var(--line);border-radius:var(--radius);padding:1.3rem 1.5rem;display:flex;gap:1rem;align-items:flex-start}
+.quickread .tag{flex:0 0 auto;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--grad);color:#000000;border-radius:8px;padding:.35rem .7rem;margin-top:.2rem}
+.quickread p{color:var(--muted);font-size:.98rem}
+.quickread p strong{color:var(--ink)}
+.hero-stats{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.4rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.5rem;min-width:150px}
+.stat .num{font-family:var(--disp);font-size:2rem;font-weight:800;background:var(--grad);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .lbl{font-size:.8rem;color:var(--faint);letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.scroll-hint{margin-top:3rem;color:var(--faint);font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;animation:bob 2.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.7}50%{transform:translateY(8px);opacity:1}}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.5rem}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.2rem;margin-bottom:1.5rem}
+@media(max-width:720px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--ac,var(--grad))}
+.card.sky{--ac:linear-gradient(90deg,var(--sky-deep),var(--sky))}
+.card.teal{--ac:linear-gradient(90deg,var(--teal-deep),var(--teal))}
+.card.org{--ac:linear-gradient(90deg,var(--org-deep),var(--org))}
+.card h3{font-family:var(--disp);font-size:1.35rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.01em}
+.card h3 .chem{font-size:.85rem;font-weight:600;color:var(--faint);letter-spacing:.08em}
+.card p,.card li{color:var(--muted);font-size:.99rem}
+.card ul{list-style:none;margin-top:.9rem;display:grid;gap:.65rem}
+.card ul li{padding-left:1.5rem;position:relative}
+.card ul li::before{content:"▸";position:absolute;left:0;font-weight:800}
+.card.sky ul li::before{color:var(--sky)}
+.card.teal ul li::before{color:var(--teal)}
+.card.org ul li::before{color:var(--org)}
+.card strong{color:var(--ink)}
+.plain{margin-top:1.2rem;background:rgba(255,255,255,.035);border:1px dashed rgba(255,255,255,.22);
+  border-radius:12px;padding:1rem 1.2rem;font-size:.96rem;color:var(--muted)}
+.plain b{color:var(--ink)}
+.plain .plabel{display:block;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--org);margin-bottom:.35rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem;margin-bottom:1.4rem}
+.panel h3{font-family:var(--disp);font-size:1.3rem;font-weight:800;margin-bottom:.8rem}
+.panel p{color:var(--muted);margin-bottom:.8rem}
+.panel p strong,.panel li strong{color:var(--ink)}
+.kv{display:flex;gap:.9rem;align-items:flex-start;padding:.9rem 0;border-top:1px solid var(--line)}
+.kv:first-of-type{border-top:none}
+.kv .k{flex:0 0 auto;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  padding:.3rem .7rem;border-radius:8px;margin-top:.25rem}
+.kv .k.s{background:rgba(124,199,255,.12);color:var(--sky);border:1px solid rgba(124,199,255,.35)}
+.kv .k.t{background:rgba(94,234,212,.10);color:var(--teal);border:1px solid rgba(94,234,212,.35)}
+.kv .k.o{background:rgba(251,146,60,.12);color:var(--org);border:1px solid rgba(251,146,60,.35)}
+.kv .k.a{background:rgba(251,191,36,.12);color:var(--amber);border:1px solid rgba(251,191,36,.35)}
+.kv .k.g{background:rgba(251,113,133,.12);color:var(--rose);border:1px solid rgba(251,113,133,.35)}
+.kv p{font-size:.99rem}
+.diagram{background:radial-gradient(600px 300px at 50% 0%,rgba(134, 25, 143,.10),transparent 70%),#000000;
+  border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;margin:0 0 1.4rem;overflow:hidden}
+.diagram svg{display:block;width:100%;height:auto}
+.diagram .cap{text-align:center;color:var(--faint);font-size:.85rem;margin-top:.9rem;letter-spacing:.03em}
+.flow{stroke-dasharray:6 7;animation:dashmove 1.6s linear infinite}
+@keyframes dashmove{to{stroke-dashoffset:-26}}
+.float-slow{animation:floaty 5s ease-in-out infinite}
+.float-slower{animation:floaty 7s ease-in-out infinite reverse}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.glow-pulse{animation:glowp 2.8s ease-in-out infinite}
+@keyframes glowp{0%,100%{opacity:.55}50%{opacity:1}}
+.ebar{margin:1rem 0 1.4rem}
+.ebar .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.4rem}
+.ebar .row .t{font-weight:700;font-size:.98rem}
+.ebar .row .v{font-size:.88rem;color:var(--faint);font-variant-numeric:tabular-nums}
+.ebar .track{height:14px;background:rgba(255,255,255,.06);border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+.ebar .fill{height:100%;width:0;border-radius:999px;transition:width 1.6s cubic-bezier(.2,.7,.2,1)}
+.in .ebar .fill{width:var(--w)}
+.ebar .note{font-size:.85rem;color:var(--faint);margin-top:.45rem}
+.anec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+@media(max-width:720px){.anec-grid{grid-template-columns:1fr}}
+.anec{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem;position:relative;overflow:hidden}
+.anec::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+.anec .stamp{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.12em;
+  color:var(--amber);border:1px solid rgba(251,191,36,.4);background:rgba(251,191,36,.08);
+  padding:.28rem .6rem;border-radius:7px;text-transform:uppercase;margin-bottom:.65rem}
+.anec h4{font-size:1.05rem;font-weight:800;margin-bottom:.5rem}
+.anec-head{display:flex;align-items:center;gap:.85rem;margin-bottom:.55rem}
+.udot{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--amber);flex:0 0 auto;position:relative}
+.udot::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--amber);animation:udotPulse 2.2s ease-out infinite}
+@keyframes udotPulse{0%{transform:scale(.55);opacity:.9}70%{opacity:.25}100%{transform:scale(1.25);opacity:0}}
+.anec-head .udot{margin-left:.15rem}
+.ulegend{display:flex;align-items:center;gap:.75rem;margin:0 0 1.5rem;padding:.85rem 1.15rem;border:1px dashed var(--line);border-radius:14px;background:rgba(255,255,255,.03);color:var(--muted);font-size:.93rem}
+.ulegend strong{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.udot::after{animation:none;opacity:.35;transform:scale(.8)}}
+.anec-head .thumb{flex:0 0 auto;width:54px;height:54px;border-radius:14px;border:1px solid var(--line)}
+.anec-head h4{margin-bottom:0}
+.anec p{color:var(--muted);font-size:.95rem}
+.anec p strong{color:var(--ink)}
+.anec .caveat{margin-top:.8rem;font-size:.82rem;color:var(--faint);border-top:1px dashed var(--line);padding-top:.7rem}
+.folk-note{background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.3);border-radius:var(--radius);
+  padding:1.2rem 1.4rem;margin-bottom:1.6rem;color:var(--muted);font-size:.98rem}
+.folk-note strong{color:var(--amber)}
+.safety-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+@media(max-width:720px){.safety-grid{grid-template-columns:1fr}}
+.scard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem}
+.scard .level{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  padding:.3rem .65rem;border-radius:7px;margin-bottom:.7rem}
+.scard h4{font-size:1.05rem;font-weight:800;margin-bottom:.5rem}
+.scard p{color:var(--muted);font-size:.95rem}
+.scard p strong{color:var(--ink)}
+.lvl-known .level{background:rgba(251,191,36,.1);color:var(--amber);border:1px solid rgba(251,191,36,.4)}
+.lvl-theory .level{background:rgba(251,146,60,.1);color:var(--org);border:1px solid rgba(251,146,60,.4)}
+.lvl-unknown .level{background:rgba(251,113,133,.1);color:var(--rose);border:1px solid rgba(251,113,133,.4)}
+.gloss{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.g-item{border-bottom:1px solid var(--line)}
+.g-item:last-child{border-bottom:none}
+.g-q{width:100%;background:none;border:none;color:var(--ink);font-family:var(--font);font-size:1.02rem;font-weight:700;
+  text-align:left;padding:1.05rem 1.4rem;cursor:pointer;display:flex;justify-content:flex-start;align-items:center;gap:1rem}
+.g-q:hover{background:rgba(255,255,255,.03)}
+.g-q .term{color:var(--sky)}
+.g-item:nth-child(3n+2) .g-q .term{color:var(--teal)}
+.g-item:nth-child(3n) .g-q .term{color:var(--org)}
+.g-q .plus{flex:0 0 auto;width:1.7rem;height:1.7rem;border-radius:50%;border:1px solid var(--line);margin-left:auto;
+  display:inline-flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--muted);transition:all .3s}
+.g-item.open .g-q .plus{transform:rotate(45deg);background:var(--grad);color:#000000;border-color:transparent}
+.gthumb{flex:0 0 auto;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);
+  animation:gaFloat 5s ease-in-out infinite}
+.gthumb.v2{animation:gaBreathe 4.4s ease-in-out infinite}
+.gthumb.v3{animation:gaTilt 6s ease-in-out infinite}
+@keyframes gaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes gaBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes gaTilt{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.g-a{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.g-a .gsci,.g-a .gex{padding:0 1.4rem 1rem;color:var(--muted);font-size:.95rem}
+.g-a .gsci strong,.g-a .gex strong{color:var(--ink)}
+.gslabel{display:block;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:.35rem}
+.g-a .gex{margin:0 1.4rem 1rem;padding:0 0 0 1rem;border-left:2px solid var(--line)}
+.g-a .plain{margin:0 1.4rem 1.3rem;background:rgba(255,255,255,.035);border:1px dashed rgba(255,255,255,.22);
+  border-radius:12px;padding:1rem 1.2rem;font-size:.96rem;color:var(--muted)}
+.g-a .plain b{color:var(--ink)}
+.g-a .plain .plabel{display:block;font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:.35rem}
+.take-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-bottom:1.6rem}
+@media(max-width:720px){.take-grid{grid-template-columns:1fr}}
+.take{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.4rem}
+.take .tk{font-size:1.5rem;margin-bottom:.5rem}
+.take h4{font-size:1.05rem;font-weight:800;margin-bottom:.4rem}
+.take p{color:var(--muted);font-size:.95rem}
+.take p strong{color:var(--ink)}
+.limits{background:rgba(251,113,133,.05);border:1px solid rgba(251,113,133,.3);border-radius:var(--radius);
+  padding:1.4rem 1.6rem;margin-bottom:1.6rem}
+.limits h3{font-family:var(--disp);font-size:1.2rem;font-weight:800;margin-bottom:.7rem;color:var(--rose)}
+.limits ul{list-style:none;display:grid;gap:.6rem}
+.limits li{color:var(--muted);font-size:.97rem;padding-left:1.6rem;position:relative}
+.limits li::before{content:"✕";position:absolute;left:0;color:var(--rose);font-weight:800}
+.limits li strong{color:var(--ink)}
+footer{position:relative;z-index:1;margin-top:4rem;border-top:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.02),transparent)}
+footer .wrap{padding-top:2.5rem;padding-bottom:3rem}
+footer .disc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem;margin-bottom:1.4rem}
+footer .disc h3{font-size:1rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.8rem;color:var(--amber)}
+footer .disc p{color:var(--muted);font-size:.92rem;margin-bottom:.8rem}
+footer .disc p strong{color:var(--ink)}
+footer .meta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+  color:var(--faint);font-size:.85rem}
+footer .meta .srcs{display:flex;gap:.6rem;flex-wrap:wrap}
+footer .meta a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--faint)}
+footer .meta a:hover{color:var(--ink)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.cmp{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-bottom:1.4rem}
+@media(max-width:720px){.cmp{grid-template-columns:1fr}}
+.cmp .card{text-align:center}
+.cmp .big{font-family:var(--disp);font-size:2.3rem;font-weight:800;margin:.4rem 0}
+.cmp.sky .big{color:var(--sky)}.cmp .card.sky .big{color:var(--sky)}
+.cmp .card.teal .big{color:var(--teal)}
+.cmp .card.org .big{color:var(--org)}
+.cmp .sub2{font-size:.82rem;color:var(--faint);letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+table.trial{width:100%;border-collapse:collapse;font-size:.94rem;margin:1rem 0 1.4rem}
+table.trial th,table.trial td{text-align:left;padding:.7rem .8rem;border-bottom:1px solid var(--line)}
+table.trial th{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:800}
+table.trial td{color:var(--muted)}
+table.trial td strong{color:var(--ink);font-variant-numeric:tabular-nums}
+table.trial tr td:first-child{color:var(--ink);font-weight:600}
+.twrap{overflow-x:auto}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+  .in .ebar .fill{transition:none}
+}
+
+/* --- ambient motion additions: subtle, additive, non-intrusive --- */
+@keyframes ringp{0%{transform:scale(.5);opacity:.85}100%{transform:scale(2.1);opacity:0}}
+.ringp{transform-box:fill-box;transform-origin:center;animation:ringp 2.8s ease-out infinite}
+@keyframes seqGlow{0%,100%{opacity:.35}18%{opacity:1}40%{opacity:.35}}
+.seqr1{animation:seqGlow 4.5s ease-in-out infinite}
+.seqr2{animation:seqGlow 4.5s ease-in-out .9s infinite}
+.seqr3{animation:seqGlow 4.5s ease-in-out 1.8s infinite}
+.flowseq{stroke-dasharray:6 7;animation:dashmove 1.6s linear infinite,seqGlow 4.5s ease-in-out infinite}
+.flowseq2{stroke-dasharray:6 7;animation:dashmove 1.6s linear infinite,seqGlow 4.5s ease-in-out .9s infinite}
+.flowseq3{stroke-dasharray:6 7;animation:dashmove 1.6s linear infinite,seqGlow 4.5s ease-in-out 1.8s infinite}
+
+/* ===== mini-poll component ===== */
+/* Mini-poll component styles — compact, theme-aware via CSS vars with fallbacks.
+   Works inside these infographics (which define --card, --ink, etc.)
+   and standalone. */
+mini-poll { display: block; }
+.mpoll {
+  max-width: 620px;
+  margin: 2.2rem auto;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background:
+    linear-gradient(var(--card, #000000), var(--card, #000000)) padding-box,
+    linear-gradient(135deg, var(--mpc1, #fdba74), var(--mpc2, #a3e635)) border-box;
+  font-family: inherit;
+  overflow: hidden;
+}
+/* slim collapsed teaser */
+.mpoll-teaser {
+  display: flex; align-items: center; gap: .6rem;
+  width: 100%; cursor: pointer; text-align: left;
+  padding: .75rem 1rem; border: 0; background: transparent;
+  color: var(--muted, #a9b1c9); font-size: .88rem;
+}
+.mpoll-teaser:hover { background: rgba(255,255,255,.03); }
+.mpoll-teaser:focus-visible { outline: 2px solid var(--amber, #fbbf24); outline-offset: -2px; }
+.mpoll-teaser-dot {
+  flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--mpc1, #fdba74);
+  box-shadow: 0 0 10px var(--mpc1, #fdba74);
+  animation: mpulse 2.4s ease-in-out infinite;
+}
+@keyframes mpulse { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
+.mpoll-teaser-text {
+  flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.mpoll-teaser-chev {
+  flex: 0 0 auto; transition: transform .2s; color: var(--faint, #7f88a5);
+}
+.mpoll.open .mpoll-teaser-chev { transform: rotate(180deg); }
+/* animated expand/collapse */
+.mpoll-bodywrap {
+  display: grid; grid-template-rows: 0fr;
+  transition: grid-template-rows .45s cubic-bezier(.25,.8,.3,1);
+}
+.mpoll.open .mpoll-bodywrap { grid-template-rows: 1fr; }
+.mpoll-clip { overflow: hidden; min-height: 0; }
+.mpoll-body {
+  padding: 0 1.4rem 1.3rem;
+  opacity: 0; transform: translateY(-10px);
+  transition: opacity .32s ease, transform .45s cubic-bezier(.25,.8,.3,1);
+}
+.mpoll.open .mpoll-body { opacity: 1; transform: translateY(0); }
+.mpoll-kicker {
+  font-size: .78rem; font-weight: 800; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--muted, #a9b1c9);
+  margin-bottom: .6rem;
+}
+/* single top-of-page banner (preview mode only) */
+.mpoll-topbanner {
+  display: flex; align-items: center; justify-content: center; gap: .6rem;
+  max-width: 620px; margin: 0 auto 1.4rem; padding: .6rem 1.2rem;
+  border-radius: 999px; font-size: .82rem; font-weight: 700; color: #000000;
+  background: linear-gradient(100deg, var(--acc1, #fdba74), var(--acc2, #a3e635), var(--acc3, #fb923c));
+}
+.mpoll-topbanner-dot {
+  flex: 0 0 auto; width: 8px; height: 8px; border-radius: 50%;
+  background: #000000;
+  animation: mpulse 2.4s ease-in-out infinite;
+}
+.mpoll-field { border: 0; margin: 0; padding: 0; }
+.mpoll-q {
+  font-size: 1.12rem; font-weight: 800; line-height: 1.35;
+  color: var(--ink, #edf0f9); margin-bottom: .9rem; padding: 0;
+}
+.mpoll-opts { display: grid; gap: .55rem; }
+.mpoll-opt {
+  display: flex; align-items: center; gap: .7rem;
+  width: 100%; text-align: left; cursor: pointer;
+  padding: .72rem .9rem; border-radius: 12px;
+  border: 1px solid var(--line, rgba(255,255,255,.09));
+  background: rgba(255,255,255,.03); color: var(--ink, #edf0f9);
+  font-size: .95rem; transition: border-color .15s, background .15s, transform .15s;
+}
+.mpoll-opt:hover { border-color: var(--amber, #fbbf24); background: rgba(255,255,255,.05); }
+.mpoll-opt:focus-visible { outline: 2px solid var(--amber, #fbbf24); outline-offset: 2px; }
+.mpoll-opt.sel { border-color: var(--amber, #fbbf24); background: rgba(251,191,36,.10); }
+.mpoll-emoji { font-size: 1.25rem; flex: 0 0 auto; }
+.mpoll-label { flex: 1; }
+.mpoll-vote, .mpoll-again {
+  display: block; width: 100%; margin-top: .9rem; padding: .8rem;
+  border: 0; border-radius: 12px; cursor: pointer;
+  font-size: 1rem; font-weight: 800; color: #000000;
+  background: linear-gradient(100deg, var(--acc1, #fdba74), var(--acc2, #a3e635));
+  transition: transform .15s, opacity .15s;
+}
+.mpoll-vote:hover:not(:disabled), .mpoll-again:hover { transform: translateY(-1px); }
+.mpoll-vote:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+.mpoll-note {
+  margin-top: .7rem; font-size: .88rem; color: #fbbf24;
+  border: 1px dashed rgba(251,191,36,.4); border-radius: 10px; padding: .6rem .8rem;
+}
+.mpoll-bars { display: grid; gap: .6rem; margin-top: .4rem; }
+.mpoll-rowtop {
+  display: flex; justify-content: space-between; gap: .8rem;
+  font-size: .9rem; color: var(--ink, #edf0f9); margin-bottom: .28rem;
+}
+.mpoll-pct { font-weight: 800; color: var(--muted, #a9b1c9); flex: 0 0 auto; }
+.mpoll-mine { color: var(--amber, #fbbf24); font-weight: 700; font-size: .8rem; }
+.mpoll-track {
+  height: 10px; border-radius: 999px; overflow: hidden;
+  background: rgba(255,255,255,.07);
+}
+.mpoll-fill {
+  height: 100%; width: 0; border-radius: 999px;
+  background: linear-gradient(90deg, var(--acc1, #fdba74), var(--acc2, #a3e635), var(--acc3, #fb923c));
+  transition: width .9s cubic-bezier(.22,.8,.3,1);
+}
+.mpoll-row.mine .mpoll-fill { box-shadow: 0 0 10px rgba(251,191,36,.45); }
+.mpoll-total {
+  margin-top: .8rem; font-size: .85rem; color: var(--faint, #7f88a5);
+}
+.mpoll-sub { margin-top: .8rem; font-size: .9rem; color: var(--muted, #a9b1c9); }
+.mpoll-count { font-weight: 800; color: var(--ink, #edf0f9); font-variant-numeric: tabular-nums; }
+.mpoll-disc {
+  margin-top: .9rem; padding-top: .7rem;
+  border-top: 1px dashed var(--line, rgba(255,255,255,.09));
+  font-size: .76rem; line-height: 1.5; color: var(--faint, #7f88a5);
+}
+.mpoll-loading { color: var(--faint, #7f88a5); font-size: .9rem; padding: .6rem 0; }
+@media (prefers-reduced-motion: reduce) {
+  .mpoll-opt, .mpoll-vote, .mpoll-again, .mpoll-fill, .mpoll-teaser-chev,
+  .mpoll-bodywrap, .mpoll-body { transition: none; }
+  .mpoll-teaser-dot { animation: none; }
+  .mpoll-body { opacity: 1; transform: none; }
+}
+@media (max-width: 560px) {
+  .mpoll { margin: 1.6rem .2rem; }
+  .mpoll-body { padding: 0 1rem 1.1rem; }
+  .mpoll-q { font-size: 1.02rem; }
+}
+
+.hero-strip{max-width:46rem;margin:0 auto 1.6rem;font-size:.8rem;font-weight:700;letter-spacing:.06em;color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:.55rem 1rem;background:rgba(255,255,255,.03)}
+.hero-strip strong{color:var(--amber)}
+#dots{overflow:hidden}
+.kv .k{flex:0 1 auto}
+.kv p{min-width:0}
+</style>
+</head>
+<body>
+<svg class="sr-only" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="triGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d946ef"/><stop offset="50%" stop-color="#86198f"/><stop offset="100%" stop-color="#3b0764"/>
+    </linearGradient>
+  </defs>
+</svg>
+<div class="bg-grad" aria-hidden="true"></div>
+<svg id="dots" aria-hidden="true"></svg>
+<div class="orb o1" aria-hidden="true"></div><div class="orb o2" aria-hidden="true"></div><div class="orb o3" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div id="doneToast" role="status">You made it through the mitochondrial mechanic 🎉</div>
+<div id="progress" aria-hidden="true"></div>
+<div id="themeToggle" role="group" aria-label="Color theme">
+  <button type="button" class="tt-opt" data-mode="light" aria-pressed="false">
+    <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg><span>Light</span>
+  </button>
+  <button type="button" class="tt-opt" data-mode="dark" aria-pressed="true">
+    <svg class="ic-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 14.2A8.5 8.5 0 0 1 9.8 3.6a.7.7 0 0 0-.9-.9 10.5 10.5 0 1 0 12.4 12.4.7.7 0 0 0-.9-.9Z"/></svg><span>Dark</span>
+  </button>
+</div>
+<aside class="toc" aria-label="Chapters">
+  <div class="brand">SS-31<br><span class="g">the mitochondrial mechanic</span></div>
+  <div class="toc-pill" aria-hidden="true"></div>
+  <a href="#ch1"><span class="n">01</span>The Peptide</a>
+  <a href="#ch2"><span class="n">02</span>Discovery</a>
+  <a href="#ch3"><span class="n">03</span>Mechanism</a>
+  <a href="#ch4"><span class="n">04</span>Trial Record</a>
+  <a href="#ch5"><span class="n">05</span>What People Say</a>
+  <a href="#ch6"><span class="n">06</span>Risks & Unknowns</a>
+  <a href="#ch7"><span class="n">07</span>Glossary</a>
+  <a href="#ch8"><span class="n">08</span>Takeaways</a>
+  <div class="mini"><span>Read</span><span id="tocPct">0%</span></div>
+  <div class="mini-bar"><i id="tocBar"></i></div>
+</aside>
+<nav class="chapters" aria-label="Chapters"><div class="rail" id="rail">
+  <a href="#ch1">01 · Peptide</a><a href="#ch2">02 · Discovery</a><a href="#ch3">03 · Mechanism</a><a href="#ch4">04 · Trials</a><a href="#ch5">05 · Reports</a><a href="#ch6">06 · Risks</a><a href="#ch7">07 · Glossary</a><a href="#ch8">08 · Takeaways</a>
+</div></nav>
+
+<header class="hero">
+  <div class="badge"><span class="dot"></span>Mitochondrial peptide · Approved for Barth syndrome 2025 · Educational only</div>
+  <div class="hero-strip"><strong>Educational only</strong> — not medical advice. Full disclaimer at the bottom of this page.</div>
+  <h1>SS-31<br><span class="g">the mitochondrial mechanic</span></h1>
+  <p class="sub">A four-amino-acid peptide that parks itself in your cells' power plants and tries to keep them running clean. In <strong>September 2025</strong> it became an FDA-approved drug for the ultra-rare Barth syndrome — after failing trials in heart failure, heart attack, and muscle disease.</p>
+  <div class="quickread">
+    <span class="tag">Quick read</span>
+    <p><strong>SS-31</strong> (elamipretide) is a synthetic <strong>tetrapeptide</strong> that binds <strong>cardiolipin</strong>, a signature fat in the inner mitochondrial membrane, steadying the cell's energy machinery and cutting oxidative leakage. It earned <strong>accelerated FDA approval in 2025</strong> for Barth syndrome, a rare genetic mitochondrial disorder — while larger trials in <strong>heart failure, heart attack, and mitochondrial myopathy all missed</strong> their main goals. One of the few 'mitochondrial peptides' with genuine human trial data, wins and losses both.</p>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="num" data-count="4">0</div><div class="lbl">amino acids — a tetrapeptide</div></div>
+    <div class="stat"><div class="num" data-count="2025">0</div><div class="lbl">year of first FDA approval (Barth syndrome)</div></div>
+    <div class="stat"><div class="num" data-count="3">0</div><div class="lbl">major programs that missed their primary endpoint</div></div>
+    <div class="stat"><div class="num" data-count="96" data-prefix="+" data-suffix=" m">0</div><div class="lbl">extra meters walked in the Barth trial</div></div>
+  </div>
+  <div class="scrollcue" aria-hidden="true">scroll ↓</div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ CHAPTER 1 ============ -->
+<section class="chapter" id="ch1">
+  <span class="eyebrow"><span class="n">01</span>The peptide</span>
+  <h2>What <span class="hl">SS-31</span> actually is</h2>
+  <p class="lede">SS-31 is a <strong>tetrapeptide</strong> — just four amino acids — engineered to go where almost no drug goes: the <strong>inner membrane of your mitochondria</strong>, the power plants of the cell. Its clinical name is elamipretide.</p>
+<div class="diagram reveal"><svg viewBox="0 0 640 210" role="img" aria-label="Chain of four amino acid beads representing SS-31"><text x="20" y="24" fill="#a9b1c9" font-size="13" font-weight="700" letter-spacing="2">SS-31 · 4 AMINO ACIDS</text><g><circle cx="40.0" cy="93" r="8" fill="#86198f" stroke="#d946ef" stroke-width="2"/><circle cx="226.7" cy="93" r="8" fill="#86198f" stroke="#d946ef" stroke-width="2"/><circle cx="413.3" cy="93" r="8" fill="#86198f" stroke="#d946ef" stroke-width="2"/><circle cx="600.0" cy="93" r="8" fill="#86198f" stroke="#d946ef" stroke-width="2"/></g><rect x="245" y="60" width="150" height="66" rx="12" fill="none" stroke="#86198f" stroke-width="2.5" stroke-dasharray="7 5" class="flow"/><text x="320" y="152" fill="#d946ef" font-size="13" font-weight="800" text-anchor="middle">D-Arg · Dmt · Lys · Phe-NH₂</text><text x="320" y="172" fill="#7f88a5" font-size="12" text-anchor="middle">two unusual building blocks make it mitochondria-seeking</text><rect x="170" y="186" width="300" height="4" rx="2" fill="#86198f" opacity=".8"/><text x="320" y="206" fill="#86198f" font-size="12" font-weight="700" text-anchor="middle">ELAMIPRETIDE · MITOCHONDRIA-TARGETED</text></svg><div class="cap">Binds cardiolipin in the inner mitochondrial membrane</div></div>
+<div class="grid3">
+<div class="card sky reveal"><h3>Four beads, unusual ones</h3><p>The sequence is <strong>D-Arg-Dmt-Lys-Phe-NH₂</strong> — note the D-amino acid and the synthetic Dmt residue. Those odd pieces give it a positive charge and fat-loving character that drag it into mitochondria.</p></div>
+<div class="card teal reveal"><h3>Parks on cardiolipin</h3><p>Its target is <strong>cardiolipin</strong>, a fat found almost only in the inner mitochondrial membrane. SS-31 binds it and steadies the membrane where the cell's energy machinery sits.</p></div>
+<div class="card org reveal"><h3>A drug, not a supplement</h3><p>Marketed as <strong>Forzinity</strong>, it won <strong>accelerated FDA approval in September 2025</strong> for Barth syndrome. Everything else — longevity clinics, biohacker forums — is off-label or gray-market territory.</p></div>
+</div>
+<div class="plain reveal"><div class="plabel">Plain English</div><p>If the mitochondrion is a <strong>power plant</strong>, SS-31 is a <strong>maintenance engineer who lives on site</strong>. It doesn't build new generators — it tightens the bolts on the ones you have so they leak less and hum steadier.</p></div>
+</section>
+<mini-poll slug="ss31-mini-ch1"
+  data-question="Had you heard of SS-31 before today?"
+  data-answers='[["🆕", "Brand new"],["👀", "Heard the name"],["📖", "Know the basics"],["🧪", "Know it well"]]'>
+</mini-poll>
+<!-- ============ CHAPTER 2 ============ -->
+<section class="chapter" id="ch2">
+  <span class="eyebrow"><span class="n">02</span>Discovery</span>
+  <h2>From Cornell chemistry to <span class="hl">FDA approval</span></h2>
+  <p class="lede">SS-31 began as a chemistry curiosity about how tiny peptides could slip into mitochondria — then survived twenty years of biotech development, most of it failure, to reach one narrow approval.</p>
+<div class="diagram reveal"><svg viewBox="0 0 640 196" role="img" aria-label="Timeline"><line x1="40" y1="110" x2="600" y2="110" stroke="#06080f" stroke-width="3" class="flowseq"/><circle cx="70" cy="110" r="26" fill="none" stroke="#d946ef" stroke-width="2" class="ringp"/><circle cx="70" cy="110" r="13" fill="#d946ef"/><text x="70" y="60" fill="#d946ef" font-size="13" font-weight="800" text-anchor="middle">2000s</text><text x="70" y="160" fill="#a9b1c9" font-size="11.5" font-weight="700" text-anchor="middle">The S-S peptides</text><text x="70" y="178" fill="#7f88a5" font-size="10.5" text-anchor="middle">Mitochondria-seeking tetrapeptides first described in academic labs</text><circle cx="195" cy="110" r="26" fill="none" stroke="#86198f" stroke-width="2" class="ringp"/><circle cx="195" cy="110" r="13" fill="#86198f"/><text x="195" y="60" fill="#86198f" font-size="13" font-weight="800" text-anchor="middle">2006+</text><text x="195" y="160" fill="#a9b1c9" font-size="11.5" font-weight="700" text-anchor="middle">Stealth founded</text><text x="195" y="178" fill="#7f88a5" font-size="10.5" text-anchor="middle">A biotech forms to develop elamipretide for mitochondrial disease</text><circle cx="320" cy="110" r="26" fill="none" stroke="#3b0764" stroke-width="2" class="ringp"/><circle cx="320" cy="110" r="13" fill="#3b0764"/><text x="320" y="60" fill="#3b0764" font-size="13" font-weight="800" text-anchor="middle">2010s</text><text x="320" y="160" fill="#a9b1c9" font-size="11.5" font-weight="700" text-anchor="middle">Trial blitz</text><text x="320" y="178" fill="#7f88a5" font-size="10.5" text-anchor="middle">Programs launch in heart failure, heart attack, myopathy, eye disease</text><circle cx="445" cy="110" r="26" fill="none" stroke="#86198f" stroke-width="2" class="ringp"/><circle cx="445" cy="110" r="13" fill="#86198f"/><text x="445" y="60" fill="#86198f" font-size="13" font-weight="800" text-anchor="middle">2024</text><text x="445" y="160" fill="#a9b1c9" font-size="11.5" font-weight="700" text-anchor="middle">Advisory vote</text><text x="445" y="178" fill="#7f88a5" font-size="10.5" text-anchor="middle">FDA panel votes 10–6 for efficacy in Barth syndrome</text><circle cx="570" cy="110" r="26" fill="none" stroke="#d946ef" stroke-width="2" class="ringp"/><circle cx="570" cy="110" r="13" fill="#d946ef"/><text x="570" y="60" fill="#d946ef" font-size="13" font-weight="800" text-anchor="middle">2025</text><text x="570" y="160" fill="#a9b1c9" font-size="11.5" font-weight="700" text-anchor="middle">Approval</text><text x="570" y="178" fill="#7f88a5" font-size="10.5" text-anchor="middle">Accelerated FDA approval for Barth syndrome as Forzinity</text></svg><div class="cap">Two decades, many failed trials, one ultra-rare approval.</div></div>
+<div class="kv reveal"><span class="k s">Built for a membrane</span><p>The design insight was physical, not biological: give a tiny peptide the right <strong>charge and greasiness</strong> and mitochondria will pull it in on their own. No transporter needed.</p></div>
+<div class="kv reveal"><span class="k t">A graveyard of programs</span><p>Heart failure, heart attack, primary mitochondrial myopathy — <strong>three big programs missed</strong> their primary endpoints. Most biotechs don't survive that; this one had Barth syndrome.</p></div>
+<div class="kv reveal"><span class="k o">The rare-disease path</span><p>Barth syndrome affects only a few hundred known patients worldwide. Approval rested on a <strong>12-patient randomized trial</strong> plus long-term extension data — tiny by normal standards, huge for an ultra-rare disease.</p></div>
+<div class="plain reveal"><div class="plabel">Plain English</div><p>SS-31's résumé reads like a <strong>character actor</strong>: rejected for every leading role (heart failure, heart attack, muscle disease), then won an award in the smallest possible category — and earned it, for patients with almost no other options.</p></div>
+</section>
+<mini-poll slug="ss31-mini-ch2"
+  data-question="One approval after many failures — your take?"
+  data-answers='[["🎯", "That&#39;s how rare-disease drugs work"],["⚠️", "Makes me skeptical"],["📊", "Failures are data too"],["🤷", "Not sure what to think"]]'>
+</mini-poll>
+<!-- ============ CHAPTER 3 ============ -->
+<section class="chapter" id="ch3">
+  <span class="eyebrow"><span class="n">03</span>Mechanism</span>
+  <h2>How it is <span class="hl">supposed</span> to work</h2>
+  <p class="lede">The mechanism story is unusually physical for a drug: <strong>go to the membrane, hold it steady, leak less energy</strong>. Here's the proposed chain.</p>
+<div class="diagram reveal"><svg viewBox="0 0 640 196" role="img" aria-label="Four-step mechanism diagram"><g font-size="13" font-weight="800" text-anchor="middle"><rect x="20" y="60" width="128" height="120" rx="14" fill="#000000" stroke="#d946ef" stroke-width="2"/><text x="84" y="105" fill="#d946ef">1 · TARGET</text><text x="84" y="130" fill="#a9b1c9" font-size="11" font-weight="600">Finds cardiolipin</text><text x="84" y="146" fill="#a9b1c9" font-size="11" font-weight="600">inner membrane fat</text><rect x="172" y="60" width="128" height="120" rx="14" fill="#000000" stroke="#86198f" stroke-width="2"/><text x="236" y="105" fill="#86198f">2 · STEADY</text><text x="236" y="130" fill="#a9b1c9" font-size="11" font-weight="600">Stabilizes membrane</text><text x="236" y="146" fill="#a9b1c9" font-size="11" font-weight="600">energy machinery held firm</text><rect x="324" y="60" width="128" height="120" rx="14" fill="#000000" stroke="#d946ef" stroke-width="2"/><text x="388" y="105" fill="#d946ef">3 · SEAL</text><text x="388" y="130" fill="#a9b1c9" font-size="11" font-weight="600">Less ROS leakage</text><text x="388" y="146" fill="#a9b1c9" font-size="11" font-weight="600">fewer damaging free radicals</text><rect x="476" y="60" width="128" height="120" rx="14" fill="#000000" stroke="#86198f" stroke-width="2"/><text x="540" y="105" fill="#86198f">4 · OUTPUT</text><text x="540" y="130" fill="#a9b1c9" font-size="11" font-weight="600">Better ATP flow</text><text x="540" y="146" fill="#a9b1c9" font-size="11" font-weight="600">cells run cleaner</text></g><g stroke="#7f88a5" stroke-width="2" fill="none" class="flow" stroke-dasharray="6 6"><path d="M148 120 h24"/><path d="M300 120 h24"/><path d="M452 120 h24"/></g></svg><div class="cap">Proposed chain: target → steady → seal → output. Plausible physics, mixed clinical proof.</div></div>
+<div class="ebar"><div class="row"><span class="t">Mitochondrial targeting</span><span class="v">strong physics</span></div><div class="track"><div class="fill" style="--w:90%;background:linear-gradient(90deg,#86198f,#d946ef)"></div></div><div class="note">The peptide genuinely concentrates in mitochondria — the delivery story is the least controversial part.</div></div>
+<div class="ebar"><div class="row"><span class="t">Less oxidative damage (animals)</span><span class="v">consistent</span></div><div class="track"><div class="fill" style="--w:70%;background:linear-gradient(90deg,#86198f,#d946ef)"></div></div><div class="note">Animal models repeatedly show reduced reactive-oxygen damage and better mitochondrial output.</div></div>
+<div class="ebar"><div class="row"><span class="t">Functional benefit (humans)</span><span class="v">narrow</span></div><div class="track"><div class="fill" style="--w:35%;background:linear-gradient(90deg,#3b0764,#86198f)"></div></div><div class="note">Real in Barth syndrome (walk test, heart function). Absent in heart failure, heart attack, and myopathy trials.</div></div>
+<div class="ebar"><div class="row"><span class="t">Longevity / energy claims</span><span class="v">no human data</span></div><div class="track"><div class="fill" style="--w:5%;background:linear-gradient(90deg,#06080f,#06080f)"></div></div><div class="note">Forum claims about aging, energy, and performance have no clinical trials behind them at all.</div></div>
+<div class="plain reveal"><div class="plabel">Plain English</div><p>The pitch: <strong>find the power plant → brace its walls → stop the leaks → more clean power</strong>. The first two steps are solid science. Whether 'more clean power' reaches the patient depends entirely on the disease — and so far it mostly hasn't.</p></div>
+</section>
+<mini-poll slug="ss31-mini-ch3"
+  data-question="Which mechanism step is most convincing?"
+  data-answers='[["🎯", "Mitochondrial targeting"],["🧱", "Membrane steadying"],["🔥", "Less oxidative leak"],["⚡", "Better energy output"]]'>
+</mini-poll>
+<!-- ============ CHAPTER 4 ============ -->
+<section class="chapter" id="ch4">
+  <span class="eyebrow"><span class="n">04</span>Trial record</span>
+  <h2>The trials: <span class="hl">wins and losses</span></h2>
+  <p class="lede">Most drug pages hide the failures. This one leads with them — because SS-31's failures teach more than its approval does.</p>
+<div class="grid3">
+<div class="card sky reveal"><h3>Barth syndrome: approved</h3><p>TAZPOWER randomized just <strong>12 patients</strong>; the extension showed sustained gains — about <strong>96 extra meters</strong> on the walk test and better heart function. Enough, for an ultra-rare disease, to win accelerated approval.</p></div>
+<div class="card teal reveal"><h3>Three high-profile misses</h3><p><strong>PROGRESS-HF</strong> (71 heart-failure patients): no improvement. <strong>EMBRACE-STEMI</strong> (118 heart-attack patients): no smaller infarcts. <strong>MMPOWER-3</strong> (218 myopathy patients): primary endpoint failed.</p></div>
+<div class="card org reveal"><h3>The eye program: alive</h3><p><strong>ReCLAIM-2</strong> in dry macular degeneration missed its primary endpoints — but a retinal secondary signal was strong enough to launch an ongoing <strong>phase 3 (RENEW)</strong>. The most interesting open question.</p></div>
+</div>
+<div class="plain reveal"><div class="plabel">Plain English</div><p>Scorecard: <strong>one narrow win, three clear losses, one 'to be continued.'</strong> That's not a miracle molecule — it's a real drug with a real, limited job. Anyone selling it as a general energy or longevity fix is selling past the data.</p></div>
+</section>
+<mini-poll slug="ss31-mini-ch4"
+  data-question="Three failed programs — dealbreaker or normal?"
+  data-answers='[["🚫", "Dealbreaker"],["📊", "Normal drug development"],["🎯", "Wrong diseases, right drug"],["⏳", "Waiting on the eye trial"]]'>
+</mini-poll>
+<!-- ============ CHAPTER 5 ============ -->
+<section class="chapter" id="ch5">
+  <span class="eyebrow"><span class="n">05</span>What people say</span>
+  <h2>Reports from the <span class="hl">wild</span></h2>
+  <p class="lede">Beyond the trials, SS-31 circulates in <strong>longevity clinics and peptide forums</strong> — a very different evidence universe. Stories, not data, as always.</p>
+<div class="ulegend reveal"><span class="udot" role="img" aria-label="Unverified anecdote"></span><p><strong>Unverified anecdote</strong> — the pulsing dot marks a paraphrased recurring theme from forums and clinics: not verified, not evidence.</p></div>
+<div class="anec-grid">
+<div class="anec reveal"><div class="anec-head"><h4>The energy anecdote</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div><p>“Two weeks in and my afternoon slump is just gone.” <strong>Caveat:</strong> energy is the most placebo-responsive outcome there is, and nobody online is running a blinded trial on themselves.</p><div class="caveat"><strong>Caveat:</strong> the classic vitality story — real feeling, unknowable cause.<br><strong>Pattern:</strong> Subjective energy claims cluster wherever mitochondria are mentioned.</div></div>
+<div class="anec reveal"><div class="anec-head"><h4>Injection-site complaints</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div><p>“Works fine, but every shot leaves an itchy red welt.” <strong>Caveat:</strong> this one matches the trial data — site reactions were the most common adverse event in actual studies.</p><div class="caveat"><strong>Caveat:</strong> rare case where forums and trials agree.<br><strong>Pattern:</strong> The most believable anecdote is the least exciting one.</div></div>
+<div class="anec reveal"><div class="anec-head"><h4>The price talk</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div><p>“My clinic charges more per month than my car payment.” <strong>Caveat:</strong> cost anecdotes describe the longevity market, not the molecule — but they explain why gray-market versions tempt people.</p><div class="caveat"><strong>Caveat:</strong> approved-drug pricing vs research-chemical pricing is a chasm.<br><strong>Pattern:</strong> Price is not a mechanism of action.</div></div>
+<div class="anec reveal"><div class="anec-head"><h4>Vial roulette</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div><p>“First source did nothing, second source felt completely different.” <strong>Caveat:</strong> unregulated peptides vary wildly in content and purity — different experiences may mean different chemicals.</p><div class="caveat"><strong>Caveat:</strong> the strongest argument that anecdotes can't be compared.<br><strong>Pattern:</strong> With no quality oversight, 'SS-31' is a label, not a guarantee.</div></div>
+<div class="anec reveal"><div class="anec-head"><h4>The stack talk</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div><p>“Pair it with NAD+ — they fix different parts of aging.” <strong>Caveat:</strong> 'complementary mechanisms' is marketing logic; no trial has tested any SS-31 combination in humans.</p><div class="caveat"><strong>Caveat:</strong> combo theorizing runs far ahead of data.<br><strong>Pattern:</strong> Two thin rationales don't make one thick proof.</div></div>
+<div class="anec reveal"><div class="anec-head"><h4>The skeptic</h4><span class="udot" role="img" aria-label="Unverified anecdote"></span></div><p>“Failed in heart failure but I'm supposed to believe it de-ages me?” <strong>Caveat:</strong> fair question — though Barth syndrome shows biology can be disease-specific.</p><div class="caveat"><strong>Caveat:</strong> the failed trials are the skeptics' best ammunition.<br><strong>Pattern:</strong> Healthy skepticism is the correct default here.</div></div>
+</div>
+<div class="folk-note reveal"><p>The honest filter: <strong>Barth syndrome patients have trial data; everyone else has stories</strong>. When a longevity clinic's claims outrun the failed heart-failure trial, believe the trial.</p></div>
+</section>
+<mini-poll slug="ss31-mini-ch5"
+  data-question="Longevity-clinic SS-31 use — your reaction?"
+  data-answers='[["💬", "Interesting"],["🧂", "Needs salt"],["📊", "Show me a trial"],["🚫", "Out past the data"]]'>
+</mini-poll>
+<!-- ============ CHAPTER 6 ============ -->
+<section class="chapter" id="ch6">
+  <span class="eyebrow"><span class="n">06</span>Risks & unknowns</span>
+  <h2>Risks & <span class="hl">unknowns</span></h2>
+  <p class="lede">Over <strong>2,000 patient-years</strong> of trial exposure give SS-31 a better safety file than most peptides here — for the studied populations. Outside them, the file thins fast.</p>
+<div class="safety-grid">
+<div class="scard lvl-known reveal"><span class="level">Known</span><h4>Injection-site reactions</h4><p><strong>Observed in trials:</strong> redness, itching, and irritation where it's injected — the most common adverse events, usually mild and self-limiting.</p></div>
+<div class="scard lvl-known reveal"><span class="level">Known</span><h4>No mitochondria-specific signal</h4><p><strong>Observed in trials:</strong> across 2,000+ patient-years, no pattern of mitochondrial toxicity (like lactic acidosis) emerged. Reassuring, within studied doses and durations.</p></div>
+<div class="scard lvl-theory reveal"><span class="level">Theoretical</span><h4>Off-label unknowns</h4><p><strong>Theoretical:</strong> trial safety data covers specific diseases, doses, and monitoring. Longevity-clinic and gray-market use has <strong>none of that scaffolding</strong> — different doses, no monitoring, unknown duration.</p></div>
+<div class="scard lvl-unknown reveal"><span class="level">Unknown</span><h4>Pregnancy & young patients</h4><p><strong>Unknown:</strong> insufficient human data in pregnancy and breastfeeding; the approval covers patients 30 kg and up. Blank pages, not clean bills of health.</p></div>
+<div class="scard lvl-unknown reveal"><span class="level">Unknown</span><h4>Gray-market quality</h4><p><strong>Unknown:</strong> unregulated 'SS-31' may be underdosed, impure, or mislabeled. For a drug whose real version requires prescription manufacturing, that's a wide quality gap.</p></div>
+<div class="scard lvl-known reveal"><span class="level">Known</span><h4>Not an energy supplement</h4><p><strong>Observed fact:</strong> the failed trials are data, not bad luck. Treating SS-31 as a general vitality drug means ignoring the studies that said no.</p></div>
+</div>
+<div class="plain reveal"><div class="plabel">Plain English</div><p>Known: <strong>itchy injection sites, and a clean-ish trial safety record</strong> in studied patients. Unknown: <strong>everything about unsupervised, off-label, long-term use</strong>. The drug earned trust in a hospital; the forums are spending it without a license.</p></div>
+</section>
+<mini-poll slug="ss31-mini-ch6"
+  data-question="Which unknown bothers you most?"
+  data-answers='[["⏳", "Long-term safety"],["🏭", "Gray-market quality"],["🤰", "Pregnancy data gap"],["💊", "Off-label dosing"]]'>
+</mini-poll>
+<!-- ============ CHAPTER 7 ============ -->
+<section class="chapter" id="ch7">
+  <span class="eyebrow"><span class="n">07</span>Glossary</span>
+  <h2>Speak <span class="hl">mitochondria</span></h2>
+  <p class="lede">Twelve terms, each with the science, an example, and a plain-English translation. Tap any term to expand it.</p>
+<div class="gloss">
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v1" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#d946ef22"/><path d="M24 6v30M14 12l20 24M34 12L14 36" fill="none" stroke="#d946ef" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="term">Mitochondria</span><span class="plus">+</span></button><div class="g-a"><p class="gsci"><span class="gslabel">The science</span>The cell's energy organelles, converting fuel into ATP through the electron transport chain. They carry their own small DNA.</p><p class="gex"><span class="gslabel">Example</span>The power plants SS-31 is engineered to enter.</p><div class="plain"><span class="plabel">Plain English</span>Tiny batteries inside every cell that make usable energy.</div></div></div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v2" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#86198f22"/><circle cx="24" cy="24" r="14" fill="none" stroke="#86198f" stroke-width="2.5"/><circle cx="24" cy="24" r="5" fill="#86198f"/></svg><span class="term">Cardiolipin</span><span class="plus">+</span></button><div class="g-a"><p class="gsci"><span class="gslabel">The science</span>A signature phospholipid of the inner mitochondrial membrane that anchors the energy-making protein complexes in place.</p><p class="gex"><span class="gslabel">Example</span>The parking spot SS-31 binds to.</p><div class="plain"><span class="plabel">Plain English</span>A special fat that holds the power plant's machinery together.</div></div></div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v3" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#3b076422"/><path d="M12 36l8-18 6 10 4-6 6 14z" fill="none" stroke="#3b0764" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="term">Electron transport chain</span><span class="plus">+</span></button><div class="g-a"><p class="gsci"><span class="gslabel">The science</span>The series of protein complexes in the inner membrane that pass electrons along, pumping protons to drive ATP synthesis.</p><p class="gex"><span class="gslabel">Example</span>The assembly line SS-31 steadies.</p><div class="plain"><span class="plabel">Plain English</span>The cell's power-production conveyor belt.</div></div></div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v1" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#d946ef22"/><path d="M10 24h8l3-8 4 16 3-8h10" fill="none" stroke="#d946ef" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="term">ATP</span><span class="plus">+</span></button><div class="g-a"><p class="gsci"><span class="gslabel">The science</span>Adenosine triphosphate: the cell's energy currency. Breaking it releases the energy that powers nearly everything cells do.</p><p class="gex"><span class="gslabel">Example</span>The finished product of the mitochondrial factory.</p><div class="plain"><span class="plabel">Plain English</span>The battery charge every cell spends.</div></div></div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v2" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#86198f22"/><path d="M14 8h20v10l-5 5v13a3 3 0 0 1-3 3h-4a3 3 0 0 1-3-3V23l-5-5z" fill="none" stroke="#86198f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="term">ROS</span><span class="plus">+</span></button><div class="g-a"><p class="gsci"><span class="gslabel">The science</span>Reactive oxygen species: chemically aggressive byproducts of energy production that damage proteins, fats, and DNA when unchecked.</p><p class="gex"><span class="gslabel">Example</span>The toxic exhaust SS-31 is meant to reduce.</p><div class="plain"><span class="plabel">Plain English</span>Cellular exhaust fumes that cause wear and tear.</div></div></div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v3" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#3b076422"/><path d="M24 8c7 0 12 5 12 12 0 9-12 20-12 20S12 29 12 20c0-7 5-12 12-12z" fill="none" stroke="#3b0764" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="term">Tetrapeptide</span><span class="plus">+</span></button><div class="g-a"><p class="gsci"><span class="gslabel">The science</span>A peptide of exactly four amino acids — among the smallest functional peptide drugs.</p><p class="gex"><span class="gslabel">Example</span>What SS-31 is: four beads, unusually chosen.</p><div class="plain"><span class="plabel">Plain English</span>A molecular short story, not a novel.</div></div></div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v1" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#d946ef22"/><path d="M8 16h32M8 24h32M8 32h20" fill="none" stroke="#d946ef" stroke-width="2.5" stroke-linecap="round"/></svg><span class="term">Barth syndrome</span><span class="plus">+</span></button><div class="g-a"><p class="gsci"><span class="gslabel">The science</span>An ultra-rare X-linked genetic disorder of cardiolipin metabolism causing heart weakness, muscle weakness, and low white blood cells.</p><p class="gex"><span class="gslabel">Example</span>The disease that earned SS-31 its approval.</p><div class="plain"><span class="plabel">Plain English</span>A rare genetic power-plant defect — SS-31's one approved use.</div></div></div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v2" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#86198f22"/><path d="M18 10h12v28H18zM18 18h12M18 26h12" fill="none" stroke="#86198f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="term">Accelerated approval</span><span class="plus">+</span></button><div class="g-a"><p class="gsci"><span class="gslabel">The science</span>An FDA pathway allowing approval on a surrogate or intermediate endpoint for serious rare diseases, with confirmatory evidence required later.</p><p class="gex"><span class="gslabel">Example</span>How a 12-patient trial became an approval.</p><div class="plain"><span class="plabel">Plain English</span>Approval now, final proof homework due later.</div></div></div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v3" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#3b076422"/><path d="M24 6l14 8v16l-14 8-14-8V14z" fill="none" stroke="#3b0764" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="22" r="3.5" fill="#3b0764"/></svg><span class="term">TAZPOWER</span><span class="plus">+</span></button><div class="g-a"><p class="gsci"><span class="gslabel">The science</span>The small randomized trial of elamipretide in Barth syndrome, followed by a long open-label extension showing sustained walk-test gains.</p><p class="gex"><span class="gslabel">Example</span>The 12-patient study behind the approval.</p><div class="plain"><span class="plabel">Plain English</span>The tiny trial that carried the whole approval.</div></div></div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v1" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#d946ef22"/><path d="M10 30c3-9 8-14 14-14s11 5 14 14M24 16v18" fill="none" stroke="#d946ef" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="term">6-minute walk test</span><span class="plus">+</span></button><div class="g-a"><p class="gsci"><span class="gslabel">The science</span>A standard functional measure: how far a patient can walk in six minutes. The key efficacy signal in the Barth program.</p><p class="gex"><span class="gslabel">Example</span>The +96 meters that mattered.</p><div class="plain"><span class="plabel">Plain English</span>A simple stamina test that became the headline number.</div></div></div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v2" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#86198f22"/><circle cx="17" cy="17" r="7" fill="none" stroke="#86198f" stroke-width="2.5"/><path d="M22 22l12 12" stroke="#86198f" stroke-width="2.5" stroke-linecap="round"/></svg><span class="term">Dry AMD</span><span class="plus">+</span></button><div class="g-a"><p class="gsci"><span class="gslabel">The science</span>Dry age-related macular degeneration: gradual retinal cell loss in older adults; photoreceptors are extremely energy-hungry, motivating the SS-31 eye program.</p><p class="gex"><span class="gslabel">Example</span>The indication with an ongoing phase 3.</p><div class="plain"><span class="plabel">Plain English</span>Age-related vision loss — SS-31's open question.</div></div></div>
+<div class="g-item"><button class="g-q" aria-expanded="false"><svg class="gthumb v3" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#3b076422"/><path d="M24 8v32M12 14l24 20M36 14L12 34" fill="none" stroke="#3b0764" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="term">Inner membrane</span><span class="plus">+</span></button><div class="g-a"><p class="gsci"><span class="gslabel">The science</span>The folded inner boundary of mitochondria where the electron transport chain lives; folds called cristae multiply its surface area.</p><p class="gex"><span class="gslabel">Example</span>SS-31's exact address inside the cell.</p><div class="plain"><span class="plabel">Plain English</span>The power plant's engine room wall.</div></div></div>
+</div>
+</section>
+<mini-poll slug="ss31-mini-ch7"
+  data-question="Which term was newest to you?"
+  data-answers='[["🧬", "Cardiolipin"],["⚡", "Electron transport chain"],["🔥", "ROS"],["📋", "Accelerated approval"]]'>
+</mini-poll>
+<!-- ============ CHAPTER 8 ============ -->
+<section class="chapter" id="ch8">
+  <span class="eyebrow"><span class="n">08</span>Takeaways</span>
+  <h2>The <span class="hl">bottom line</span></h2>
+  <p class="lede">Eight chapters, distilled. A real drug with a narrow win, notable losses, and a forum reputation that outruns both.</p>
+<div class="take-grid">
+<div class="take reveal"><div class="tk">🔋</div><h4>A mitochondrial mechanic</h4><p>SS-31 is a <strong>4-amino-acid peptide</strong> that binds cardiolipin and steadies the cell's energy membrane.</p></div>
+<div class="take reveal"><div class="tk">✅</div><h4>Approved for Barth syndrome</h4><p><strong>Accelerated FDA approval, September 2025</strong> — for an ultra-rare genetic mitochondrial disease.</p></div>
+<div class="take reveal"><div class="tk">❌</div><h4>Failed where it counted most</h4><p>Heart failure, heart attack, and myopathy trials <strong>all missed</strong> their primary endpoints.</p></div>
+<div class="take reveal"><div class="tk">👁️</div><h4>The eye trial continues</h4><p>Dry AMD missed primaries but showed a retinal signal — <strong>phase 3 RENEW is ongoing</strong>.</p></div>
+<div class="take reveal"><div class="tk">🧪</div><h4>Mechanism is plausible</h4><p>Targeting, membrane steadying, less oxidative leak — <strong>solid physics, mixed medicine</strong>.</p></div>
+<div class="take reveal"><div class="tk">💉</div><h4>Known side effects are mild</h4><p><strong>Injection-site reactions</strong> lead the list; no mitochondrial toxicity signal in 2,000+ patient-years.</p></div>
+<div class="take reveal"><div class="tk">💬</div><h4>Forums outrun the data</h4><p>Longevity and energy claims have <strong>zero clinical trials</strong> behind them.</p></div>
+<div class="take reveal"><div class="tk">🏭</div><h4>Quality matters</h4><p>Prescription Forzinity and gray-market 'SS-31' are <strong>different universes</strong> of oversight.</p></div>
+<div class="take reveal"><div class="tk">🎯</div><h4>Disease-specific biology</h4><p>Works in Barth syndrome, fails in heart failure — <strong>mitochondria aren't one disease</strong>.</p></div>
+<div class="take reveal"><div class="tk">🔭</div><h4>What would change the story</h4><p>A <strong>positive phase 3</strong> — in the eye, or anywhere else. Until then: narrow win, broad losses.</p></div>
+</div>
+<div class="limits reveal"><h3>What this page does not do</h3><ul><li><strong>No dosing or administration guidance.</strong> This page contains no instructions for obtaining, preparing, or using SS-31 or any related product.</li><li><strong>No sourcing information.</strong> This page does not help find, evaluate, or buy peptides from any channel.</li><li><strong>Can't replace your clinician.</strong> Mitochondrial disease care needs specialists who know your case — this page can't do that job.</li></ul></div>
+</section>
+<mini-poll slug="ss31-mini-ch8"
+  data-question="How would you rate this infographic?"
+  data-answers='[["😍", "Loved it — five stars"],["🙂", "Good stuff — four stars"],["😐", "It&#39;s okay — three stars"]]'>
+</mini-poll>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="disc">
+      <h3>⚠️ Educational content — not medical advice</h3>
+      <p>This page is for <strong>education and entertainment only</strong>. It is not medical advice, not a recommendation, and not a substitute for a qualified healthcare professional. Elamipretide (Forzinity) received <strong>accelerated FDA approval in September 2025 for Barth syndrome only</strong>; all other uses are investigational, and major trials in heart failure, heart attack, and primary mitochondrial myopathy <strong>failed to meet their primary endpoints</strong>.</p>
+      <p>Online anecdotes are <strong>unverified stories</strong>, many involving unregulated gray-market products of unknown content and purity. <strong>Do not attempt to obtain or use unapproved substances.</strong> If you are considering any treatment, speak with a licensed clinician.</p>
+    </div>
+    <div class="meta">
+      <span>Compiled October 2026</span>
+      
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* ---------- theme ---------- */
+function setTheme(t){
+  document.documentElement.setAttribute("data-theme",t);
+  try{localStorage.setItem("ss31-theme",t)}catch(e){}
+  document.querySelectorAll("#themeToggle .tt-opt").forEach(function(b){
+    var on=b.dataset.mode===t;
+    b.classList.toggle("active",on);
+    b.setAttribute("aria-pressed",on?"true":"false");
+  });
+}
+document.querySelectorAll("#themeToggle .tt-opt").forEach(function(b){
+  b.addEventListener("click",function(){setTheme(b.dataset.mode);});
+});
+setTheme(document.documentElement.getAttribute("data-theme")==="light"?"light":"dark");
+/* ---------- ambient dots ---------- */
+(function(){
+  var svg=document.getElementById("dots"),W,H,dots=[];
+  function size(){W=window.innerWidth;H=window.innerHeight;svg.setAttribute("viewBox","0 0 "+W+" "+H);}
+  size();window.addEventListener("resize",size);
+  var NS="http://www.w3.org/2000/svg";
+  var colors=["#d946ef","#86198f","#d946ef","#3b0764","#86198f","#d946ef"];
+  for(var i=0;i<140;i++){
+    var c=document.createElementNS(NS,"circle");
+    var col=colors[i%colors.length];
+    var baseOp=0.30+Math.random()*0.35;
+    var sx=Math.random()*2000,sy=Math.random()*2000;
+    c.setAttribute("r",(1.4+Math.random()*2.2).toFixed(1));
+    c.setAttribute("fill",col);c.setAttribute("opacity",baseOp.toFixed(2));
+    c.style.transform="translate("+sx.toFixed(1)+"px,"+sy.toFixed(1)+"px)";
+    svg.appendChild(c);
+    dots.push({el:c,x:sx,y:sy,
+      vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,
+      baseOp:baseOp,ph:Math.random()*Math.PI*2,sp:0.3+Math.random()*0.7});
+  }
+  var paused=document.hidden;
+  document.addEventListener("visibilitychange",function(){paused=document.hidden;});
+  var t0=0;
+  function tick(ts){
+    requestAnimationFrame(tick);
+    if(paused||reduced)return;
+    if(!t0)t0=ts;var t=(ts-t0)/1000;
+    var w=window.innerWidth,h=window.innerHeight;
+    for(var i=0;i<dots.length;i++){var d=dots[i];
+      d.x+=d.vx;d.y+=d.vy;
+      if(d.x<-20)d.x=w+20;if(d.x>w+20)d.x=-20;
+      if(d.y<-20)d.y=h+20;if(d.y>h+20)d.y=-20;
+      d.el.style.transform="translate("+d.x.toFixed(1)+"px,"+d.y.toFixed(1)+"px)";
+      d.el.style.opacity=(d.baseOp*(0.7+0.3*Math.sin(t*d.sp+d.ph))).toFixed(2);
+    }
+  }
+  if(!reduced)requestAnimationFrame(tick);
+})();
+/* ---------- bead-chain helper (legacy; no-op unless #retaBeads exists) ---------- */
+(function(){
+  var g=document.getElementById("retaBeads");if(!g)return;
+  var NS="http://www.w3.org/2000/svg";
+  var n=39,startX=70,endX=720,y=120,amp=34;
+  for(var i=0;i<n;i++){
+    var t=i/(n-1),x=startX+(endX-startX)*t,yy=y+Math.sin(t*Math.PI*2.2)*amp;
+    var c=document.createElementNS(NS,"circle");
+    c.setAttribute("cx",x.toFixed(1));c.setAttribute("cy",yy.toFixed(1));
+    c.setAttribute("r",i%5===0?11:8.5);
+    c.setAttribute("fill","#000000");
+    c.setAttribute("stroke","url(#beadTri)");c.setAttribute("stroke-width","4");
+    g.appendChild(c);
+    if(i<n-1){
+      var t2=(i+1)/(n-1),x2=startX+(endX-startX)*t2,yy2=y+Math.sin(t2*Math.PI*2.2)*amp;
+      var l=document.createElementNS(NS,"line");
+      l.setAttribute("x1",x.toFixed(1));l.setAttribute("y1",yy.toFixed(1));
+      l.setAttribute("x2",x2.toFixed(1));l.setAttribute("y2",yy2.toFixed(1));
+      l.setAttribute("stroke","#06080f");l.setAttribute("stroke-width","3");
+      g.insertBefore(l,g.firstChild);
+    }
+  }
+})();
+/* ---------- reveal on scroll ---------- */
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});
+},{threshold:0.12,rootMargin:"0px 0px -6% 0px"});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});
+/* ---------- count-up stats ---------- */
+var cio=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting)return;cio.unobserve(e.target);
+    var el=e.target,end=parseFloat(el.getAttribute("data-count")),
+        dec=parseInt(el.getAttribute("data-decimals")||"0",10),
+        pre=el.getAttribute("data-prefix")||"",suf=el.getAttribute("data-suffix")||"";
+    if(reduced){el.textContent=pre+end.toFixed(dec)+suf;return;}
+    var t0=null,dur=1600;
+    function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1),ease=1-Math.pow(1-p,3);
+      el.textContent=pre+(end*ease).toFixed(dec)+suf;
+      if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  });
+},{threshold:0.5});
+document.querySelectorAll("[data-count]").forEach(function(el){cio.observe(el);});
+/* ---------- glossary accordion ---------- */
+document.querySelectorAll(".g-item").forEach(function(item){
+  var q=item.querySelector(".g-q"),a=item.querySelector(".g-a");
+  q.addEventListener("click",function(){
+    var open=item.classList.contains("open");
+    document.querySelectorAll(".g-item.open").forEach(function(o){
+      o.classList.remove("open");
+      o.querySelector(".g-a").style.maxHeight="0px";
+      o.querySelector(".g-q").setAttribute("aria-expanded","false");
+    });
+    if(!open){
+      item.classList.add("open");
+      q.setAttribute("aria-expanded","true");
+      requestAnimationFrame(function(){a.style.maxHeight=a.scrollHeight+"px";});
+    }
+  });
+});
+/* ---------- sidebar / rail smooth scroll ---------- */
+document.querySelectorAll('.toc a[href^="#"], nav.chapters a[href^="#"]').forEach(function(a){
+  a.addEventListener("click",function(e){
+    e.preventDefault();
+    var id=a.getAttribute("href"),t=id.length>1?document.querySelector(id):null;
+    if(t)t.scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"});
+    if(history.replaceState&&id.length>1){try{history.replaceState(null,"",id);}catch(err){}}
+  });
+});
+/* ---------- progress + scrollspy ---------- */
+var bar=document.getElementById("progress"),
+    tocBar=document.getElementById("tocBar"),tocPct=document.getElementById("tocPct"),
+    links=Array.prototype.slice.call(document.querySelectorAll(".toc a, nav.chapters a")),
+    rail=document.getElementById("rail"),
+    sections=["ch1","ch2","ch3","ch4","ch5","ch6","ch7","ch8"].map(function(id){return document.getElementById(id);}),
+    pill=document.querySelector(".toc-pill"),cur=-1,ticking=false;
+function easeWidth(el,v){el.style.width=v+"%";}
+function update(){
+  ticking=false;
+  var h=document.documentElement,
+      max=h.scrollHeight-h.clientHeight,
+      p=max>0?Math.min(100,Math.max(0,(h.scrollTop||document.body.scrollTop)/max*100)):0;
+  easeWidth(bar,p);
+  if(tocBar)easeWidth(tocBar,p);
+  if(tocPct)tocPct.textContent=Math.round(p)+"%";
+  var idx=0;
+  sections.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<window.innerHeight*0.4)idx=i;});
+  if(idx!==cur){
+    cur=idx;
+    links.forEach(function(a){a.classList.remove("active");});
+    links.forEach(function(a){if(a.getAttribute("href")==="#ch"+(idx+1))a.classList.add("active");});
+    var active=document.querySelector(".toc a.active");
+    if(active&&pill){
+      var tocEl=document.querySelector(".toc"),
+          tr=tocEl.getBoundingClientRect(),ar=active.getBoundingClientRect();
+      pill.style.opacity="1";
+      pill.style.height=active.offsetHeight+"px";
+      pill.style.transform="translateY("+Math.round(ar.top-tr.top)+"px)";
+      if(rail&&window.innerWidth<1200){
+        var ra=rail.querySelector('a[href="#ch'+(idx+1)+'"]');
+        if(ra)rail.scrollTo({left:ra.offsetLeft-24,behavior:reduced?"auto":"smooth"});
+      }
+    }else if(pill){pill.style.opacity="0";}
+  }
+}
+window.addEventListener("scroll",function(){if(!ticking){ticking=true;requestAnimationFrame(update);}},{passive:true});
+window.addEventListener("resize",function(){cur=-1;update();});
+window.addEventListener("load",function(){cur=-1;update();});
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){cur=-1;update();});}
+setTimeout(function(){cur=-1;update();},800);
+update();
+/* ---------- completion confetti ---------- */
+var done=false;
+function fireConfetti(){
+  var c=document.getElementById("confetti"),ctx=c.getContext("2d");
+  c.width=window.innerWidth;c.height=window.innerHeight;
+  c.classList.add("show");
+  var cols=["#d946ef","#86198f","#3b0764","#fbbf24","#edf0f9"],parts=[];
+  for(var i=0;i<45;i++)parts.push({x:Math.random()*c.width,y:-20-Math.random()*c.height*0.25,
+    w:4+Math.random()*4,h:5+Math.random()*5,c:cols[i%cols.length],
+    vy:0.7+Math.random()*1.1,ph:Math.random()*Math.PI*2,sw:0.4+Math.random()*0.8,
+    r:Math.random()*Math.PI,vr:-0.06+Math.random()*0.12});
+  var start=null,dur=4200;
+  function frame(ts){
+    if(!start)start=ts;var el=ts-start,p=el/dur;
+    ctx.clearRect(0,0,c.width,c.height);
+    ctx.globalAlpha=p>0.7?Math.max(0,1-(p-0.7)/0.3):1;
+    parts.forEach(function(q){q.y+=q.vy;q.ph+=0.02;q.r+=q.vr;
+      var sx=q.x+Math.sin(q.ph)*22*q.sw;
+      ctx.save();ctx.translate(sx,q.y);ctx.rotate(q.r);ctx.fillStyle=q.c;
+      ctx.fillRect(-q.w/2,-q.h/2,q.w,q.h);ctx.restore();});
+    ctx.globalAlpha=1;
+    if(el<dur&&!reduced)requestAnimationFrame(frame);
+    else{c.classList.remove("show");ctx.clearRect(0,0,c.width,c.height);}
+  }
+  if(!reduced)requestAnimationFrame(frame);else c.classList.remove("show");
+}
+var fio=new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting&&!done){done=true;
+      fireConfetti();
+      var t=document.getElementById("doneToast");
+      t.classList.add("show");setTimeout(function(){t.classList.remove("show");},4200);
+      fio.disconnect();}
+  });
+},{threshold:0.35});
+fio.observe(document.querySelector("footer"));
+})();
+</script>
+<script>
+/* Mini-poll backend config. Empty = preview mode (local votes, 3-day cooldown).
+   To go live: fill in your Supabase project URL + anon key (see poll-admin README). */
+window.MINI_POLL_CONFIG = { supabaseUrl: "", anonKey: "", turnstileSiteKey: "",
+  accents: ["#d946ef", "#86198f", "#3b0764", "#c029cd", "#400c44", "#fbbf24", "#ef2688", "#22d3ee"] };
+</script>
+<script>
+/* Mini-poll web component — vanilla JS, no dependencies. See component docs for usage. */
+(function () {
+  'use strict';
+  var CFG = window.MINI_POLL_CONFIG || {};
+  var API = (CFG.supabaseUrl || '').replace(/\/$/, '');
+  var ANON = CFG.anonKey || '';
+
+  function lsKey(slug) { return 'minipoll:' + slug; }
+
+  async function fingerprint() {
+    try {
+      var c = document.createElement('canvas');
+      var x = c.getContext('2d');
+      x.textBaseline = 'top'; x.font = '14px Arial';
+      x.fillText('poll-fp::' + navigator.userAgent, 2, 2);
+      var raw = [navigator.userAgent, screen.width + 'x' + screen.height,
+        screen.colorDepth, Intl.DateTimeFormat().resolvedOptions().timeZone,
+        navigator.language, c.toDataURL()].join('|');
+      var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(raw));
+      return Array.from(new Uint8Array(buf)).map(function (b) {
+        return b.toString(16).padStart(2, '0');
+      }).join('');
+    } catch (e) { return 'fp-' + Math.random().toString(36).slice(2); }
+  }
+
+  function apiHeaders() {
+    return { 'apikey': ANON, 'Authorization': 'Bearer ' + ANON, 'Content-Type': 'application/json' };
+  }
+  async function restGet(path) {
+    var r = await fetch(API + '/rest/v1/' + path, { headers: apiHeaders() });
+    if (!r.ok) throw new Error('api ' + r.status);
+    return r.json();
+  }
+  async function rpc(name, body) {
+    var r = await fetch(API + '/rest/v1/rpc/' + name, {
+      method: 'POST', headers: apiHeaders(), body: JSON.stringify(body)
+    });
+    if (!r.ok) throw new Error('rpc ' + r.status);
+    return r.json();
+  }
+  async function edge(name, body) {
+    var r = await fetch(API + '/functions/v1/' + name, {
+      method: 'POST', headers: apiHeaders(), body: JSON.stringify(body)
+    });
+    var data = await r.json().catch(function () { return {}; });
+    return { status: r.status, data: data };
+  }
+
+  function fmtCountdown(ms) {
+    if (ms <= 0) return 'now';
+    var s = Math.floor(ms / 1000);
+    var d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600),
+        m = Math.floor(s % 3600 / 60), ss = s % 60;
+    if (d > 0) return d + 'd ' + h + 'h';
+    if (h > 0) return h + 'h ' + m + 'm';
+    if (m > 0) return m + 'm ' + ss + 's';
+    return ss + 's';
+  }
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  /* per-poll accent: distinct pulsing-dot color + gradient border per poll.
+     Palette comes from window.MINI_POLL_CONFIG.accents when the page sets one,
+     otherwise the default nine-color set. */
+  var ACCENTS = (window.MINI_POLL_CONFIG && window.MINI_POLL_CONFIG.accents) ||
+                ['#fdba74', '#a3e635', '#fb923c', '#4701ff', '#ef2688',
+                 '#a3e635', '#fbbf24', '#fb7185', '#22d3ee'];
+  function pollAccents(slug) {
+    var m = /ch(\d+)/.exec(slug || '');
+    var i = m ? parseInt(m[1], 10) - 1 : 0;
+    i = ((i % ACCENTS.length) + ACCENTS.length) % ACCENTS.length;
+    return [ACCENTS[i], ACCENTS[(i + 3) % ACCENTS.length]];
+  }
+
+  function MiniPoll() { return Reflect.construct(HTMLElement, [], MiniPoll); }
+  MiniPoll.prototype = Object.create(HTMLElement.prototype);
+  Object.setPrototypeOf(MiniPoll, HTMLElement);
+
+  MiniPoll.prototype.connectedCallback = function () {
+    var self = this;
+    this._slug = this.getAttribute('slug') || '';
+    this._selected = null;
+    this._timer = null;
+    this._refreshTimer = null;
+    this._open = this.hasAttribute('data-expanded');
+    if (!this._slug) { this.style.display = 'none'; return; }
+    this.renderShell();
+    fingerprint().then(function (fp) {
+      self._fp = fp;
+      self.boot();
+    });
+  };
+
+  MiniPoll.prototype.disconnectedCallback = function () {
+    if (this._timer) clearInterval(this._timer);
+    if (this._refreshTimer) clearInterval(this._refreshTimer);
+  };
+
+  /* ---------------- shell: slim teaser + collapsible body ---------------- */
+  MiniPoll.prototype.renderShell = function () {
+    this.innerHTML =
+      '<div class="mpoll">' +
+      '<button type="button" class="mpoll-teaser" aria-expanded="' + (this._open ? 'true' : 'false') + '">' +
+      '<span class="mpoll-teaser-dot" aria-hidden="true"></span>' +
+      '<span class="mpoll-teaser-text"><span class="mpoll-teaser-q">loading…</span></span>' +
+      '<span class="mpoll-teaser-chev" aria-hidden="true">▾</span>' +
+      '</button>' +
+      '<div class="mpoll-bodywrap"' + (this._open ? '' : ' inert') + '>' +
+      '<div class="mpoll-clip"><div class="mpoll-body">' +
+      '<div class="mpoll-loading" aria-live="polite">Loading poll…</div>' +
+      '</div></div></div></div>';
+    this._root = this.querySelector('.mpoll');
+    this._teaser = this.querySelector('.mpoll-teaser');
+    this._teaserQ = this.querySelector('.mpoll-teaser-q');
+    this._wrap = this.querySelector('.mpoll-bodywrap');
+    this._body = this.querySelector('.mpoll-body');
+    var ac = pollAccents(this._slug);
+    this._root.style.setProperty('--mpc1', ac[0]);
+    this._root.style.setProperty('--mpc2', ac[1]);
+    if (this._open) this._root.classList.add('open');
+    var self = this;
+    this._teaser.addEventListener('click', function () { self.toggle(); });
+  };
+
+  MiniPoll.prototype.toggle = function (force) {
+    this._open = typeof force === 'boolean' ? force : !this._open;
+    this._teaser.setAttribute('aria-expanded', this._open ? 'true' : 'false');
+    this._root.classList.toggle('open', this._open);
+    this._wrap.inert = !this._open;
+  };
+
+  MiniPoll.prototype.setTeaser = function (q, voted) {
+    this._teaserQ.textContent = voted ? '✓ you voted · see results' : q;
+  };
+
+  MiniPoll.prototype.showPreviewBanner = function () {
+    if (window.__mpollBannerShown) return;
+    window.__mpollBannerShown = true;
+    var d = document.createElement('div');
+    d.className = 'mpoll-topbanner';
+    d.setAttribute('role', 'note');
+    d.innerHTML = '<span class="mpoll-topbanner-dot" aria-hidden="true"></span>' +
+      '<span>Votes stay in this browser</span>';
+    var main = document.querySelector('main');
+    if (main) { main.insertBefore(d, main.firstChild); return; }
+    var firstChapter = document.querySelector('section.chapter');
+    if (firstChapter && firstChapter.parentNode) {
+      firstChapter.parentNode.insertBefore(d, firstChapter);
+    }
+  };
+
+  MiniPoll.prototype.boot = async function () {
+    try {
+      if (!API) return this.bootPreview();
+      var rows = await restGet('polls?slug=eq.' + encodeURIComponent(this._slug) +
+        '&select=id,slug,title,description,status,hide_results_until_close,require_captcha,disclaimer,cooldown_hours');
+      if (!rows.length) { this.style.display = 'none'; return; }
+      this._poll = rows[0];
+      this.setTeaser(this._poll.description || 'Quick poll', false);
+      var opts = await restGet('poll_options?poll_id=eq.' + this._poll.id +
+        '&select=id,label,emoji,position&order=position.asc');
+      this._options = opts;
+      var st = await edge('vote-status', { poll_id: this._poll.id, fingerprint: this._fp });
+      var s = st.data || {};
+      if (this._poll.status === 'closed') {
+        this.setTeaser(this._poll.description || 'Quick poll', !!s.voted);
+        this.showResults(s.results || { options: [], total: 0 }, s.your_option_id, 'closed');
+      } else if (s.voted && !s.can_revote) {
+        this.setTeaser(this._poll.description || 'Quick poll', true);
+        this.showResults(s.results, s.your_option_id, 'cooldown', s.revote_at);
+      } else {
+        this.showVote();
+      }
+      var self = this;
+      this._refreshTimer = setInterval(function () { self.softRefresh(); }, 45000);
+    } catch (e) {
+      this.bootPreview();
+    }
+  };
+
+  MiniPoll.prototype.softRefresh = async function () {
+    if (!API || !this._poll || this._mode !== 'results' || document.hidden || !this._open) return;
+    try {
+      var res = await rpc('get_public_results', { p_poll_id: this._poll.id });
+      this._lastResults = res;
+      this.paintBars(res);
+    } catch (e) { /* silent */ }
+  };
+
+  /* ---------------- preview mode (no backend) ---------------- */
+  MiniPoll.prototype.bootPreview = function () {
+    this.showPreviewBanner();
+    var q = this.getAttribute('data-question') || 'Quick poll';
+    var answers = [];
+    try { answers = JSON.parse(this.getAttribute('data-answers') || '[]'); } catch (e) {}
+    this._poll = { id: 'preview', title: '🧬 Quick poll', description: q,
+      status: 'open', hide_results_until_close: false, disclaimer: '',
+      cooldown_hours: 72 };
+    this._options = answers.map(function (a, i) {
+      return { id: 'opt' + i, label: a[1], emoji: a[0] };
+    });
+    this._preview = true;
+    var saved = null;
+    try { saved = JSON.parse(localStorage.getItem(lsKey(this._slug)) || 'null'); } catch (e) {}
+    var now = Date.now();
+    if (saved && now - saved.voted_at < 72 * 3600 * 1000) {
+      this._previewVotes = saved.tally || {};
+      this.setTeaser(q, true);
+      this.showResults(this.tallyResults(), saved.option_id, 'cooldown',
+        new Date(saved.voted_at + 72 * 3600 * 1000).toISOString(), true);
+    } else {
+      this.setTeaser(q, false);
+      this.showVote(true);
+    }
+  };
+
+  MiniPoll.prototype.tallyResults = function () {
+    var tally = this._previewVotes || {};
+    var total = Object.keys(tally).reduce(function (s, k) { return s + tally[k]; }, 0);
+    return {
+      hidden: false, total: total,
+      options: this._options.map(function (o) {
+        var v = tally[o.id] || 0;
+        return { option_id: o.id, label: o.label, emoji: o.emoji, votes: v,
+          pct: total ? Math.round(v / total * 1000) / 10 : 0 };
+      })
+    };
+  };
+
+  /* ---------------- vote form ---------------- */
+  MiniPoll.prototype.showVote = function (isPreview) {
+    var self = this;
+    this._mode = 'vote';
+    this._selected = null;
+    var opts = this._options.map(function (o, i) {
+      return '<button type="button" class="mpoll-opt" data-i="' + i + '" aria-pressed="false">' +
+        '<span class="mpoll-emoji" aria-hidden="true">' + esc(o.emoji) + '</span>' +
+        '<span class="mpoll-label">' + esc(o.label) + '</span></button>';
+    }).join('');
+    this._body.innerHTML =
+      '<div class="mpoll-kicker">' + esc(this._poll.title || '🧬 Quick poll') + '</div>' +
+      '<fieldset class="mpoll-field"><legend class="mpoll-q">' + esc(this._poll.description) + '</legend>' +
+      '<div class="mpoll-opts">' + opts + '</div></fieldset>' +
+      '<button type="button" class="mpoll-vote" disabled>Vote</button>' +
+      (this._poll.disclaimer ? '<div class="mpoll-disc">' + esc(this._poll.disclaimer) + '</div>' : '');
+    var btns = this._body.querySelectorAll('.mpoll-opt');
+    var voteBtn = this._body.querySelector('.mpoll-vote');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        btns.forEach(function (x) { x.classList.remove('sel'); x.setAttribute('aria-pressed', 'false'); });
+        b.classList.add('sel'); b.setAttribute('aria-pressed', 'true');
+        self._selected = parseInt(b.getAttribute('data-i'), 10);
+        voteBtn.disabled = false;
+      });
+    });
+    voteBtn.addEventListener('click', function () { self.castVote(); });
+  };
+
+  MiniPoll.prototype.castVote = async function () {
+    var self = this;
+    var opt = this._options[this._selected];
+    if (!opt) return;
+    var btn = this._body.querySelector('.mpoll-vote');
+    btn.disabled = true; btn.textContent = 'Voting…';
+    if (this._preview) {
+      var tally = this._previewVotes || {};
+      tally[opt.id] = (tally[opt.id] || 0) + 1;
+      this._previewVotes = tally;
+      try {
+        localStorage.setItem(lsKey(this._slug), JSON.stringify({
+          option_id: opt.id, voted_at: Date.now(), tally: tally }));
+      } catch (e) {}
+      this.setTeaser(this._poll.description, true);
+      this.showResults(this.tallyResults(), opt.id, 'cooldown',
+        new Date(Date.now() + 72 * 3600 * 1000).toISOString(), true);
+      return;
+    }
+    try {
+      var body = { poll_id: this._poll.id, option_id: opt.id, fingerprint: this._fp };
+      var res = await edge('mini-vote', body);
+      var d = res.data || {};
+      if (d.error === 'cooldown') {
+        this.setTeaser(this._poll.description, true);
+        this.showResults(d.results, d.your_option_id, 'cooldown', d.revote_at);
+      } else if (d.ok) {
+        try {
+          localStorage.setItem(lsKey(this._slug), JSON.stringify({
+            option_id: opt.id, voted_at: Date.now() }));
+        } catch (e) {}
+        this.setTeaser(this._poll.description, true);
+        this.showResults(d.results, d.your_option_id, 'cooldown', d.revote_at);
+      } else {
+        btn.disabled = false; btn.textContent = 'Vote';
+        this.note(this.friendlyError(d.error));
+      }
+    } catch (e) {
+      btn.disabled = false; btn.textContent = 'Vote';
+      this.note('Could not reach the poll server. Try again in a moment.');
+    }
+  };
+
+  MiniPoll.prototype.friendlyError = function (code) {
+    return { rate_limited: 'Too many votes from your network right now — try again later.',
+      banned: 'Voting is not available for this device.',
+      poll_closed: 'Voting has closed for this poll.',
+      captcha_failed: 'Please complete the CAPTCHA and try again.',
+      invalid_option: 'That answer is no longer available.' }[code] ||
+      'Something went wrong. Please try again.';
+  };
+
+  MiniPoll.prototype.note = function (msg) {
+    var n = this._body.querySelector('.mpoll-note');
+    if (!n) {
+      n = document.createElement('div');
+      n.className = 'mpoll-note'; n.setAttribute('role', 'alert');
+      this._body.appendChild(n);
+    }
+    n.textContent = msg;
+  };
+
+  /* ---------------- results ---------------- */
+  MiniPoll.prototype.showResults = function (results, yourId, state, revoteAt, isPreview) {
+    var self = this;
+    this._mode = 'results';
+    this._lastResults = results;
+    this._yourId = yourId;
+    this._revoteAt = revoteAt ? new Date(revoteAt).getTime() : 0;
+    var head = '<div class="mpoll-kicker">🔥 Community results</div>';
+    var foot = '';
+    if (state === 'closed') {
+      foot = '<div class="mpoll-sub">Voting has closed — final results.</div>';
+    } else if (state === 'cooldown' && this._revoteAt > Date.now()) {
+      foot = '<div class="mpoll-sub">You can vote again in <span class="mpoll-count" aria-live="off">…</span></div>';
+    } else if (state === 'cooldown') {
+      foot = '<button type="button" class="mpoll-again">🔄 Vote again</button>';
+    }
+    this._body.innerHTML = head +
+      '<div class="mpoll-bars" aria-live="polite"></div>' +
+      '<div class="mpoll-total"></div>' + foot +
+      (this._poll.disclaimer ? '<div class="mpoll-disc">' + esc(this._poll.disclaimer) + '</div>' : '');
+    this.paintBars(results);
+    var again = this._body.querySelector('.mpoll-again');
+    if (again) again.addEventListener('click', function () {
+      self.setTeaser(self._poll.description, false);
+      self.showVote(isPreview);
+    });
+    this.startCountdown();
+  };
+
+  MiniPoll.prototype.paintBars = function (results) {
+    var bars = this._body.querySelector('.mpoll-bars');
+    var totalEl = this._body.querySelector('.mpoll-total');
+    if (!bars) return;
+    if (!results || results.hidden) {
+      bars.innerHTML = '<div class="mpoll-sub">Results unlock when voting closes — ' +
+        (results && results.total || 0) + ' votes so far.</div>';
+      if (totalEl) totalEl.textContent = '';
+      return;
+    }
+    var yourId = this._yourId;
+    bars.innerHTML = results.options.map(function (o) {
+      var mine = String(o.option_id) === String(yourId);
+      return '<div class="mpoll-row' + (mine ? ' mine' : '') + '">' +
+        '<div class="mpoll-rowtop"><span>' + esc(o.emoji) + ' ' + esc(o.label) +
+        (mine ? ' <span class="mpoll-mine">· your pick</span>' : '') + '</span>' +
+        '<span class="mpoll-pct">' + o.pct + '%</span></div>' +
+        '<div class="mpoll-track"><div class="mpoll-fill" style="width:0%"></div></div></div>';
+    }).join('');
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        var fills = bars.querySelectorAll('.mpoll-fill');
+        results.options.forEach(function (o, i) {
+          if (fills[i]) fills[i].style.width = Math.max(o.pct, o.votes ? 2 : 0) + '%';
+        });
+      });
+    });
+    if (totalEl) totalEl.textContent = (results.total || 0).toLocaleString() +
+      (results.total === 1 ? ' vote' : ' votes');
+  };
+
+  MiniPoll.prototype.startCountdown = function () {
+    var self = this;
+    if (this._timer) clearInterval(this._timer);
+    var el = function () { return self._body && self._body.querySelector('.mpoll-count'); };
+    var tick = function () {
+      var node = el();
+      if (!node) { clearInterval(self._timer); return; }
+      var ms = self._revoteAt - Date.now();
+      if (ms <= 0) {
+        clearInterval(self._timer);
+        var sub = self._body.querySelector('.mpoll-sub');
+        if (sub) {
+          sub.innerHTML = '';
+          var b = document.createElement('button');
+          b.type = 'button'; b.className = 'mpoll-again'; b.textContent = '🔄 Vote again';
+          b.addEventListener('click', function () {
+            self.setTeaser(self._poll.description, false);
+            self.showVote(self._preview);
+          });
+          sub.appendChild(b);
+        }
+        return;
+      }
+      node.textContent = fmtCountdown(ms);
+    };
+    tick();
+    this._timer = setInterval(tick, 1000);
+  };
+
+  if (!window.customElements.get('mini-poll')) {
+    window.customElements.define('mini-poll', MiniPoll);
+  }
+  window.MiniPoll = { version: '1.5.1' };
+})();
+
+</script>
+</body>
+</html>
